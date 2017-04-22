@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    
+    <typeAliases>
+          <!-- 别名方式1，一个一个的配置 type中放置的是类的全路径，alias中放置的是类别名
+       <typeAliase type="com.cy.mybatis.beans.UserBean" alias="UserBean"/> -->
+         <!-- 别名方式2，自动扫描，将JAVA类的类名作为类的类别名 -->
+        <package name="com.learn.model"/>
+    </typeAliases>
+
+   
+<!--    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <property name="poolMaximumActiveConnections" value="500"/> 在任意时间存在的活动（也就是正在使用）连接的数量。默认值：10  
+                <property name="poolPingQuery" value="SELECT 1"/>
+                发送到数据的侦测查询，用来验证连接是否正常工作，并且准备接受请求。默认是“NO PING QUERY SET”，这会引起许多数据库驱动连接由一个错误信 息而导致失败 
+                <property name="poolPingEnabled" value="true"/> 
+                这是开启或禁用侦测查询。如果开启，你必须用一个合法的SQL语句（最好是很快速的）设置 poolPingQuery 属性。默认值：false。
+            </dataSource>
+        </environment>
+    </environments>-->
+	  
+    <mappers>
+        <mapper resource="com/learn/mapper/UserMapper.xml"/>
+       <mapper resource="com/learn/mapper/RoleMapper.xml"/>
+    </mappers>
+
+</configuration>
